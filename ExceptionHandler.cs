@@ -28,12 +28,7 @@ public class ExceptionHandler
             }
 
         }
-
-        if (exceptions.Count == 0)
-            return exceptions;
-
-        else
-            return exceptions;
+           return exceptions;
 
     }
     public static void CheckExceptionsInGameObject(GameObject gameObject)
