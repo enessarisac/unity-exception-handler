@@ -11,11 +11,11 @@ public class ExceptionDemoScript : MonoBehaviour
     private void Awake()
     {
         Debug.Log("Check exceptions in this component");
-
         ExceptionHandler.CheckExceptionsInComponent(gameObject, this); // There is currently 2 exceptions in this component
+        
         Debug.Log("Check exceptions in this gameobject");
-
         ExceptionHandler.CheckExceptionsInGameObject(gameObject); // There is currently 2 or more exceptions in this gameobject
+        
         Debug.Log("Check exceptions in this function");
         DoSomething();
     }
