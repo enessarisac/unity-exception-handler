@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ExceptionDemoScript : MonoBehaviour
 {
-    // It's null
-    public Transform NullTransform;
-    // It's null
-    public GameObject NullGameObject;
+
+    public Transform nullTransform;//null
+    public GameObject nullGameObject;
     private void Awake()
     {
-        Debug.Log("Check exceptions in this component");
-        ExceptionHandler.CheckExceptionsInComponent(gameObject, this); // There is currently 2 exceptions in this component
+        Debug.Log("The exceptions in this component");
+        ExceptionHandler.CheckExceptionsInComponent(gameObject, this);
         
-        Debug.Log("Check exceptions in this gameobject");
-        ExceptionHandler.CheckExceptionsInGameObject(gameObject); // There is currently 2 or more exceptions in this gameobject
-        
-        Debug.Log("Check exceptions in this function");
-        DoSomething();
+        Debug.Log("The exceptions in this gameobject");
+        ExceptionHandler.CheckExceptionsInGameObject(gameObject);
+
+        Debug.Log("The exceptions in CheckT function");
+        CheckT();
     }
-    public void DoSomething()
+    public void CheckT()
     {
-        
-       var checkException = ExceptionHandler.CheckExceptionsInComponent(gameObject, this);
+        GameObject _nullGameObject = null;
+        Transform _nullTransform = null;
+       var checkException = ExceptionHandler.CheckExceptionsInComponent(gameObject, this, _nullGameObject,_nullTransform);
         if (checkException.Count == 0)
         {
             Debug.Log("There is no exception in this component");
